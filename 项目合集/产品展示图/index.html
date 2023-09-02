@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing:border-box;
+            overflow: hidden;
+        }
+        .box {
+            margin:50px auto 0px;
+            border:1px #b7b5b5 solid;
+            width: 300px;
+            height: 400px;
+            background-color: #f1f1f1;
+        }
+        .about {
+            display: block;;
+            background-color: #fff;
+            height: 285px;
+            width: 300px;
+            text-decoration-line: none;
+        }
+
+        .box .about .cover {
+            width: 310px;
+            height: 190px;
+        }
+        .box .about .font {
+            display: block;
+            text-align:center;
+            line-height: 95px;;
+            color:#6d1818;
+        }
+
+
+        .server {
+            padding-top:10px;
+            padding-left:10px;
+            height: 40px;
+            background-color: #f1f1f1;
+            font-size:15px;
+            text-align:center;
+        }
+        .server .live {
+            display: inline-block;
+            height: 20px;
+            background-color: #ec46b8;
+            color: #fff;
+
+        }
+
+        .server .discount {
+            display: inline-block;
+            height: 20px;
+            border:1px orange solid;
+            color:orange;
+
+        }
+        .server .tyday {
+            display: inline-block;
+            height: 20px;
+            border:1px blue solid;
+            color:blue;
+        }
+        .box .name {
+            text-align: center;
+            font-size:20px;
+            font-weight: 700;
+        }
+        .box .cost {
+            text-align:center;
+            font-weight: 700;
+            line-height: 40px;
+            color:#d12020
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#" class="about">
+            <img class="cover" src="./1.jpg">
+            <span class="font">商品描述</span>
+        </a>
+        <div class="server">
+            <div class="live">直播中</div>
+            <div class="discount">特惠</div>
+            <div class="tyday">30天保价</div>
+            <div class="tyday">售后包邮</div>
+        </div>
+        <div class="name">给钱</div>
+        <div class="cost">￥50</div>
+
+    </div>
+</body>
+</html>
