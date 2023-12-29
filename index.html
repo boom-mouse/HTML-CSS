@@ -11,16 +11,15 @@
         }
         h1 {
             margin:auto;
-            width: 500px;
             text-align:center;
         }
-        .list {
+        ul {
+            display: block;
             margin:auto;
-            width: 500px;
+            width: 60vw;
             text-align:center;
-
         }
-        .list a {
+        ul li {
             display: block;
             margin:10px;
             background-color: #f1f1f1;
@@ -30,16 +29,23 @@
             line-height: 30px;
             color:#000;
         }
-        .list a:hover {
+        ul li:hover {
             background-color: #fff;
+        }
+        a {
+            color: #000;
+            text-decoration-line: none;
         }
     </style>
 </head>
 <body>
     <h1>HTML项目列表</h1>
-    <div class="list">
-        <a href="./项目合集/百度热搜列表/">百度热搜列表</a>
-        <a href="./项目合集/产品展示图/">产品展示图</a>
+        <ul>
+            <li><a href="./项目合集/百度热搜列表/">百度热搜列表</a></li>
+            <li><a href="./项目合集/产品展示图/">产品展示图</a></li>
+            <li><a href="./项目合集/小米商城侧边导航栏效果/">小米商城侧边导航栏效果</a></li>
+            <li><a href="./项目合集/开关切换效果/">开关切换效果</a></li>
+        </ul>  
     </div>
 </body>
 </html>

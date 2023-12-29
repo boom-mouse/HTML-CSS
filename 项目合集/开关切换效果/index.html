@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>开关切换效果</title>
+		<style>
+			h1 {
+				text-align: center;
+			}
+			.out {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				height: 100px;
+				width: 200px;
+				border-radius: 100px;
+				overflow: hidden;
+				background-color: #f0f0f0;
+				border: 1px solid #000;
+			}
+			.test {
+				height: 100px;
+				width: 100px;
+				border-radius: 100%;
+				background-color: #ffffff;
+				line-height: 100px;
+				text-align: center;
+				font-size: 30px;
+			}
+			#off {
+				display: block;
+				color: red;
+			}
+			#on {
+				display: none;
+				color: green;
+			}
+			.footer {
+				display: flex;
+				position: fixed;
+				bottom: 20%;
+				left: 50%;
+				transform: translateX(-50%);
+				height: 50px;
+			}
+			.footer img {
+				height: 50px;
+				width: 50px;
+			}
+			.footer a {
+				display: block;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>开关切换效果</h1>
+		<div class="out" onclick="change()">
+			<div class="test">
+				<span id="off">OFF</span>
+				<span id="on">ON</span>
+			</div>
+		</div>
+		<div class="footer">
+			<img src="github.png" alt="github:">
+			<a href="https://github.com/boom-mouse/HTML-CSS">查看源码</a>
+		</div>
+	</body>
+</html>
+<script>
+	var x = 10;
+	var n = 0;
+	function change() {
+		n?toOff():toOn()
+	}
+	function toOn() {
+		var test = document.getElementsByClassName("test")[0];
+		var timer = setTimeout(toOn,10);
+		if(test.style.transform === "translate(100px)" ) {
+			clearTimeout(timer);
+		}
+		else {
+			test.style.transform = "translate("+x+"px)";
+			x = x + 10;
+			n = 1;
+			test.style.background = "#fff";
+			document.getElementsByClassName("out")[0].style.background = "green";
+			document.getElementById("on").style.display = "block";
+			document.getElementById("off").style.display = "none";						
+		}
+	}
+	function toOff() {
+		var test = document.getElementsByClassName("test")[0];
+		var timer = setTimeout(toOff,10);
+		if(test.style.transform === "translate(0px)"){
+			clearTimeout(timer);
+		}
+		else {
+			test.style.transform = "translate("+x+"px)";
+			x = x - 10;
+			n = 0;
+			test.style.background = "#fff";
+			document.getElementsByClassName("out")[0].style.background = "#f0f0f0";
+			document.getElementById("on").style.display = "none";
+			document.getElementById("off").style.display = "block";
+		}
+	}
+</script>
