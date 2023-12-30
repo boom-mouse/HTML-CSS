@@ -39,15 +39,24 @@
             color: #000;
             text-decoration-line: none;
         }
+        #show {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 0%;
+            height: 450px;
+            width: 600px;
+            background-color: #f0f0f0;
+        }
     </style>
 </head>
 <body>
     <h1>HTML项目列表</h1>
     <ul>
-        <li><a href="./项目合集/百度热搜列表/" onmouseover="showImg(this.href)">百度热搜列表</a></li>
-        <li><a href="项目合集/产品展示图/">产品展示图</a></li>
-        <li><a href="项目合集/小米商城侧边导航栏效果/">小米商城侧边导航栏效果</a></li>
-        <li><a href="项目合集/开关切换效果/">开关切换效果</a></li>
+        <li><a href="./项目合集/百度热搜列表/" onmouseover="showImg(this.href)" onmouseleave="hidenImg()">百度热搜列表</a></li>
+        <li><a href="项目合集/产品展示图/" onmouseover="showImg(this.href)" onmouseleave="hidenImg()">产品展示图</a></li>
+        <li><a href="项目合集/小米商城侧边导航栏效果/" onmouseover="showImg(this.href)" onmouseleave="hidenImg()">小米商城侧边导航栏效果</a></li>
+        <li><a href="项目合集/开关切换效果/" onmouseover="showImg(this.href)" onmouseleave="hidenImg()">开关切换效果</a></li>
     </ul>
     <img id="show" src="" alt="">
 </body>
@@ -56,9 +65,12 @@
     
     function showImg(href) {
         var decodedUrl = decodeURIComponent(href);
-        document.getElementById("show").src = api + decodedUrl;
+        document.getElementById("show").src = api + decodedUrl + "?w=600&h=450";
         console.log(api+decodedUrl)
-        console.log(document.getElementById("show").src)
+        document.getElementById("show").style.display = "block"
+    }
+    function hidenImg() {
+        document.getElementById("show").style.display = "none"
     }
 </script>
 </html>
