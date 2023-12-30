@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML项目列表</title>
+    <style>
+        body {
+            background-color: #c27979;
+        }
+        h1 {
+            margin:auto;
+            text-align:center;
+        }
+        ul {
+            display: block;
+            margin:auto;
+            padding: 0px;
+            width: 60vw;
+            text-align:center;
+        }
+        ul li {
+            display: block;
+            margin:10px;
+            background-color: #f1f1f1;
+            height: 30px;
+            border:1px  solid;
+            text-decoration-line:none;
+            line-height: 30px;
+            color:#000;
+        }
+        ul li:hover {
+            background-color: #fff;
+        }
+        a {
+            display: block;
+            width: 100%;
+            color: #000;
+            text-decoration-line: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML项目列表</h1>
+    <ul>
+        <li><a href="./项目合集/百度热搜列表/" onmouseover="showImg(this.href)">百度热搜列表</a></li>
+        <li><a href="项目合集/产品展示图/">产品展示图</a></li>
+        <li><a href="项目合集/小米商城侧边导航栏效果/">小米商城侧边导航栏效果</a></li>
+        <li><a href="项目合集/开关切换效果/">开关切换效果</a></li>
+    </ul>
+    <img id="show" src="" alt="">
+</body>
+<script>
+    var api = "https://s0.wp.com/mshots/v1/http://boom-mouse.github.io/HTML-CSS/"
+    
+    function showImg(href) {
+        var decodedUrl = decodeURIComponent(href);
+        document.getElementById("show").src = api + decodedUrl;
+        console.log(api+decodedUrl)
+    }
+</script>
+</html>
