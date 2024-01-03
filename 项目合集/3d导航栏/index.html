@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3d导航栏</title>
+	<style>
+		/* 清楚默认样式 */
+		ul {
+			padding: 0px;
+		}
+		li {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+		
+		
+		.nav {
+			/* 居中 */
+			margin: 100px auto;
+			width: 400px;
+		}
+		.nav ul {
+			/* 使用flex布局将li显示在一行 */
+			display: flex;
+		}
+		.nav li {
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			
+			position: relative;
+			/* 3d盒子 */
+			transform-style: preserve-3d;
+			
+			
+			transition: all 1s;
+		}
+		/* 通用样式 */
+		.nav li a {
+			display: block;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+			
+			position: absolute;
+
+		}
+		/* 正面 */
+		.nav li a:first-child {
+			background-color: green;
+			transform: translateZ(20px);
+		}
+		/* 顶面 */
+		.nav li a:last-child {
+			background-color: orange;
+			transform: translateY(-20px) rotateX(90deg);
+		}
+		
+		/* 翻转 */
+		.nav li:hover {
+			transform: rotateX(-90deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li>
+				<a href="#">首页</a>
+				<a href="#">index</a>
+			</li>
+			<li>
+				<a href="#">关于</a>
+				<a href="#">about</a>
+			</li>
+			<li>
+				<a href="#">登录</a>
+				<a href="#">login</a>
+			</li>
+			<li>
+				<a href="#">注册</a>
+				<a href="#">register</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
